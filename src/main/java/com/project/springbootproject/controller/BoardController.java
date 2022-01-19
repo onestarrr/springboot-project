@@ -7,8 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
+/*@RestController는 @Controller와 @ReponseBody를 합쳐놓은 어노테이션
+  view 페이지가 필요 없는 API 응답에 어울리는 어노테이션*/
+
 @Controller
-@AllArgsConstructor
+@AllArgsConstructor /*생성자로 Bean 객체를 받는 방식을 해결해주는 어노테이션*/
 public class BoardController {
 
         private BoardService boardService;
@@ -24,6 +28,7 @@ public class BoardController {
         }
 
 
+        /*게시글을 DB에 INSERT 하는 메서드*/
         @PostMapping("/post")
         public String write(BoardDto boardDto) {
             boardService.savePost(boardDto);
