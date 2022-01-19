@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"> <!-- HTML 문서를 위한 XML 네임스페이스를 명시하는 것으로, 생략해도 정상작동
+                                                               인텔리제이에서 Thymeleaf문법 사용 시, 문법 에러가 발생하여 추가 -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- HEADER -->
+<!-- th:insert(JSP의 include와 같음) -->
+<div th:insert="common/header.html" id="header"></div>
+
+<!-- Thymeleaf에서 html 속성은 대부분 이처럼 th:로 바꿔서 사용할 수 있음 -->
+<!-- @{}의 의미는 애플리케이션이 설치된 경로를 기준으로 하는 상대 경로 -->
+<a th:href="@{/post}">글쓰기</a>
+
+<!-- FOOTER -->
+<div th:insert="common/footer.html" id="footer"></div>
+</body>
+</html>
