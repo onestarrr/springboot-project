@@ -17,7 +17,6 @@ public class BoardDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-
     /*toEntity()
     dto에서 필요한 부분을 빌더 패턴을 통해 entity로 만듦
     필요한 Entity는 이런 식으로 추가하면 됨.*/

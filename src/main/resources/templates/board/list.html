@@ -3,7 +3,8 @@
                                                                인텔리제이에서 Thymeleaf문법 사용 시, 문법 에러가 발생하여 추가 -->
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>게시판</title>
+    <link rel="stylesheet" th:href="@{/css/board.css}">
 </head>
 <body>
 <!-- HEADER -->
@@ -13,6 +14,40 @@
 <!-- Thymeleaf에서 html 속성은 대부분 이처럼 th:로 바꿔서 사용할 수 있음 -->
 <!-- @{}의 의미는 애플리케이션이 설치된 경로를 기준으로 하는 상대 경로 -->
 <a th:href="@{/post}">글쓰기</a>
+    <table>
+        <thead>
+            <tr>
+                <th class="one wide">번호</th>
+                <th class="ten wide">글제목</th>
+                <th class="two wide">작성자</th>
+                <th class="three wide">작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- CONTENTS !-->
+        <!-- 컨트롤러가 넘겨주는 변수는 ${}으로 받을 수 있음. -->
+        <tr th:each="board : ${boardList}">
+            <td>
+                <!-- 변수 값을 escape 처리하여, 태그의 텍스트로 사용. -->
+                <span th:text="${board.id}"></span>
+            </td>
+            <td>
+                <!-- 글 제목을 누르면 상세페이지로 이동하기 위해 PathVariable을 사용. -->
+                <a th:href="@{'/post/' + ${board.id}}">
+                    <span th:text="${board.title}"></span>
+                </a>
+            </td>
+            <td>
+                <span th:text="${board.writer}"></span>
+            </td>
+            <td>
+                <!-- #temporals.format() 날짜를 포맷팅하는 메서드 --> <!-- createdDate는 LacalDateTime타입 -->
+                <span th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
 
 <!-- FOOTER -->
 <div th:insert="common/footer.html" id="footer"></div>
