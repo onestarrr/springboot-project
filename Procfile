@@ -1,0 +1,1 @@
+web: gunicorn springboot-project.wsgi --log-file -
