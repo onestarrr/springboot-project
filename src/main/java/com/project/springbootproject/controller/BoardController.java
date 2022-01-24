@@ -62,7 +62,7 @@ public class BoardController {
         }
 
         /*게시글 수정*/
-        @PutMapping("/post/edit/{no}")
+        @PostMapping("/post/edit/{no}")
         public String update(BoardDto boardDto) {
             /*게시글 추가에서 사용하는 boardService.savePost() 메서드를 같이 사용*/
             boardService.savePost(boardDto);
@@ -71,7 +71,8 @@ public class BoardController {
         }
 
         /*게시글 삭제*/
-        @DeleteMapping("/post/{no}")
+
+        @PostMapping("/post/{no}")
         public String delete(@PathVariable("no") Long no) {
             boardService.deletePost(no);
 
