@@ -8,18 +8,10 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgres://avtglmsskppbsu:4938c61b480bb5e86d326b18d50c33aaffc1ea1523ec8de379a1fda3458122b3@ec2-52-203-164-61.compute-1.amazonaws.com:5432/d2oorbnrll0q29
+    url: jdbc:postgres://ec2-52-203-164-61.compute-1.amazonaws.com:5432/d2oorbnrll0q29
     username: avtglmsskppbsu
     password: 4938c61b480bb5e86d326b18d50c33aaffc1ea1523ec8de379a1fda3458122b3
     port : 5432
-
-  jpa:
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
-    open-in-view: false
-    show_sql: true
-    hibernate:
-      ddl-auto: create
-      format_sql: true
 
 logging:
   level:
