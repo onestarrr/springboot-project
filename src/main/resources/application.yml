@@ -8,9 +8,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgres://ec2-54-208-139-247.compute-1.amazonaws.com:5432/dtdhnlb4gji1r
-    username: wrcpnufopkurww
-    password: 131ead0abee1ed0e40c486eec71fe841e1f460637711b4c2794986debf7ae054
+    url: jdbc:postgresql://ec2-54-157-15-228.compute-1.amazonaws.com:5432/d2ppbsnlgvpk55
+    username: hebbyplnpkgrxe
+    password: dd2ecec616e15dc75cd45390b55121ff33e41a8d8371b4303264eda3f21d4fcc
     port : 5432
 
 logging:
